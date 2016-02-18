@@ -8,7 +8,7 @@ module Spina
     end
 
     def add_route
-      return if Rails.application.routes.routes.detect { |route| route.app.app == Spina::Engine }
+      return if Rails.application.routes.routes.detect { |route| route.app == Spina::Engine }
       route "mount Spina::Engine => '/'"
     end
 
